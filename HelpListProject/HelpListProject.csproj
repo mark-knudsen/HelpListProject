@@ -128,10 +128,20 @@
     <Compile Include="Model\Teacher.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="ViewModel\ClassCollection.cs" />
+    <Compile Include="ViewModel\ClassList.cs" />
     <Compile Include="ViewModel\ProblemCollector.cs" />
     <Compile Include="ViewModel\TeacherCollection.cs" />
     <Compile Include="View\CreatePageAdmin.xaml.cs">
       <DependentUpon>CreatePageAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\HelpListStudent.xaml.cs">
+      <DependentUpon>HelpListStudent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\HelpListTeacher.xaml.cs">
+      <DependentUpon>HelpListTeacher.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\HomePageAdmin.xaml.cs">
+      <DependentUpon>HomePageAdmin.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -161,6 +171,18 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="View\CreatePageAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\HelpListStudent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\HelpListTeacher.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\HomePageAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

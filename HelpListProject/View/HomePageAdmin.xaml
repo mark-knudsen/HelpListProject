@@ -1,0 +1,70 @@
+﻿<Page
+    x:Class="HelpListProject.View.HomePageAdmin"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:HelpListProject.ViewModel"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
+
+    <Page.DataContext>
+        <local:ClassCollection />
+    </Page.DataContext>
+
+
+    <Grid>
+        <StackPanel
+            Width="70"
+            HorizontalAlignment="Left"
+            Background="DarkBlue">
+            <AppBarButton
+                Foreground="White"
+                Icon="Home"
+                Label="Home" />
+            <AppBarButton
+                Foreground="White"
+                Icon="List"
+                Label="List" />
+            <AppBarButton
+                Foreground="White"
+                Icon="Add"
+                Label="Create">
+
+                <Interactivity:Interaction.Behaviors>
+                    <Core:EventTriggerBehavior EventName="Click">
+                        <Core:NavigateToPageAction TargetPage="HelpListProject.View.CreatePageAdmin" />
+                    </Core:EventTriggerBehavior>
+                </Interactivity:Interaction.Behaviors>
+            </AppBarButton>
+
+            <AppBarButton
+                Foreground="White"
+                Icon="Message"
+                Label="comment" />
+            <AppBarButton
+                Foreground="White"
+                Icon="Undo"
+                Label="Log Out">
+                <Interactivity:Interaction.Behaviors>
+                    <Core:EventTriggerBehavior EventName="Click">
+                        <Core:NavigateToPageAction TargetPage="HelpListProject.MainPage" />
+                    </Core:EventTriggerBehavior>
+                </Interactivity:Interaction.Behaviors>
+            </AppBarButton>
+
+
+        </StackPanel>
+
+        <TextBlock
+            Margin="100,30,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontSize="24"
+            Text="Welcome Admin"
+            TextWrapping="Wrap" />
+
+    </Grid>
+</Page>
