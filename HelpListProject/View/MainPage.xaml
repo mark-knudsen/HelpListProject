@@ -1,0 +1,116 @@
+﻿<Page
+    x:Class="HelpListProject.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:HelpListProject"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
+
+    <Grid RenderTransformOrigin="0.496,0.387">
+        <Grid>
+            <StackPanel
+                Width="70"
+                HorizontalAlignment="Left"
+                Background="DarkBlue" />
+            <!--  Logo  -->
+
+            <!--  Overskrift  -->
+            <Image
+                Grid.ColumnSpan="2"
+                Width="200"
+                Height="200"
+                Margin="0,50,0,0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Source="/Assets/HL-logo.png" />
+
+            <Grid
+                Grid.Column="0"
+                Margin="0,200,0,0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="39*" />
+                    <ColumnDefinition Width="161*" />
+                    <ColumnDefinition Width="154*" />
+                </Grid.ColumnDefinitions>
+
+
+                <RelativePanel
+                    Grid.Column="1"
+                    Grid.ColumnSpan="2"
+                    Margin="0,30,0,0"
+                    HorizontalAlignment="Center">
+                    <Interactivity:Interaction.Behaviors>
+                        <Core:EventTriggerBehavior EventName="PointerPressed">
+                            <Core:NavigateToPageAction />
+                        </Core:EventTriggerBehavior>
+                    </Interactivity:Interaction.Behaviors>
+                    <TextBox
+                        x:Name="Email"
+                        Width="250"
+                        Header="Username:"
+                        PlaceholderText="Indtast din skole email her..." />
+
+                    <PasswordBox
+                        x:Name="Code"
+                        Width="250"
+                        Margin="0,30,0,0"
+                        Header="Password:"
+                        RelativePanel.Below="Email" />
+
+                    <Button
+                        x:Name="LoginStudent"
+                        Width="230"
+                        Height="34"
+                        Margin="10,20,0,0"
+                        Background="DarkBlue"
+                        Content="Log in as Student"
+                        Foreground="White"
+                        RelativePanel.Below="Code">
+                        <Interactivity:Interaction.Behaviors>
+                            <Core:EventTriggerBehavior EventName="Click">
+                                <Core:NavigateToPageAction TargetPage="HelpList.View.HomePageStudent" />
+                            </Core:EventTriggerBehavior>
+                        </Interactivity:Interaction.Behaviors>
+                    </Button>
+                    <Button
+                        x:Name="LoginTeacher"
+                        Width="230"
+                        Height="34"
+                        Margin="10,20,0,0"
+                        Background="DarkRed"
+                        Content="Log in as Teacher"
+                        Foreground="White"
+                        RelativePanel.Below="LoginStudent">
+                        <Interactivity:Interaction.Behaviors>
+                            <Core:EventTriggerBehavior EventName="Click">
+                                <Core:NavigateToPageAction TargetPage="HelpList.View.HomePageTeacher" />
+                            </Core:EventTriggerBehavior>
+                        </Interactivity:Interaction.Behaviors>
+                    </Button>
+
+                    <Button
+                        Width="230"
+                        Height="34"
+                        Margin="10,20,0,0"
+                        Background="White"
+                        Content="Log in as Admin"
+                        Foreground="gray"
+                        RelativePanel.Below="LoginTeacher">
+                        <Interactivity:Interaction.Behaviors>
+                            <Core:EventTriggerBehavior EventName="Click">
+                                <Core:NavigateToPageAction TargetPage="HelpList.View.HomePageAdmin" />
+                            </Core:EventTriggerBehavior>
+                        </Interactivity:Interaction.Behaviors>
+                    </Button>
+
+                </RelativePanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>
