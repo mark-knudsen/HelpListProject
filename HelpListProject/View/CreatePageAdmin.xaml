@@ -54,13 +54,10 @@
         </StackPanel>
         <Pivot Margin="70,0,0,0">
             <PivotItem Header="Create Class">
-                <local:PivotCreateClass />
             </PivotItem>
             <PivotItem Header="Create Teacher">
-                <local:PivotCreateTeacher />
             </PivotItem>
             <PivotItem Header="Create Student">
-                <local:PivotCreateStudent />
             </PivotItem>
         </Pivot>
 

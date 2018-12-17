@@ -5,10 +5,83 @@
     xmlns:local="using:HelpListProject.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="using:HelpListProject.ViewModel"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+
+
     <Grid>
+        <Grid>
+            <StackPanel
+                Width="70"
+                HorizontalAlignment="Left"
+                Background="DarkBlue">
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="PointerPressed">
+                        <core:NavigateToPageAction TargetPage="HelpList.View.ProblemFolder"/>
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+                <AppBarButton
+                    Foreground="White"
+                    Icon="Home"
+                    Label="Home" />
+                <AppBarButton
+                    Foreground="White"
+                    Icon="List"
+                    Label="HelpList" 
+                    >
+                    <interactivity:Interaction.Behaviors>
+                        <core:EventTriggerBehavior EventName="Click">
+                            <core:NavigateToPageAction TargetPage="HelpList.View.HelpListTeacher"/>
+                        </core:EventTriggerBehavior>
+                    </interactivity:Interaction.Behaviors>
+                </AppBarButton>
+
+
+                <AppBarButton
+                    Foreground="White"
+                    Icon="Contact"
+                    Label="Classes" />
+                <AppBarButton
+                    Foreground="White"
+                    Icon="Message"
+                    Label="comment" />
+                <AppBarButton
+                    Foreground="White"
+                    Icon="Find"
+                    Label="Search" />
+
+            </StackPanel>
+        </Grid>
+
+        <GridView
+            ItemsSource="{Binding SavedProblemCollector, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+            Margin="100,100,0,0" SelectionChanged="GridView_SelectionChanged">
+            <GridView.ItemTemplate>
+                <DataTemplate>
+
+                    <Grid Height="155" Width="250" Margin="20" Background="LightGray">
+                        <Border BorderBrush="Black" BorderThickness="1">
+                            <StackPanel >
+                                <TextBlock Margin="5" FontSize="24" Text="{Binding Name}"/>
+                                <TextBlock Margin="5" Text="{Binding Topic}"/>
+                                <Grid Width="Auto" Height="70" Background="White" Margin="5">
+                                    <TextBlock Margin="5" TextWrapping="Wrap" Text="{Binding Description}"/>
+                                </Grid>
+
+                            </StackPanel>
+                        </Border>
+
+                    </Grid>
+
+                </DataTemplate>
+            </GridView.ItemTemplate>
+
+        </GridView>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Problemfolder"  VerticalAlignment="Top" Margin="450,40                    ,0,0" Height="50" Width="250" TextAlignment="Center" SelectionChanged="TextBlock_SelectionChanged" FontSize="36"/>
 
     </Grid>
 </Page>
