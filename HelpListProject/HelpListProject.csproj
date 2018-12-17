@@ -130,6 +130,7 @@
     <Compile Include="ViewModel\ClassCollection.cs" />
     <Compile Include="ViewModel\ClassList.cs" />
     <Compile Include="ViewModel\ProblemCollector.cs" />
+    <Compile Include="ViewModel\ProblemFolderCollection.cs" />
     <Compile Include="ViewModel\TeacherCollection.cs" />
     <Compile Include="View\CreatePageAdmin.xaml.cs">
       <DependentUpon>CreatePageAdmin.xaml</DependentUpon>
@@ -147,6 +148,9 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\ProblemFolder.xaml.cs">
+      <DependentUpon>ProblemFolder.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -189,6 +193,10 @@
     <Page Include="View\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ProblemFolder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
